@@ -1,3 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
-/*----------  Subsection comment block  ----------*/
+* {
+  box-sizing:border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #191414;
+  color: #fff;
+  font-family: 'Varela Round', sans-serif;
+}
+.play_cursor {
+  cursor: url('../img/play-button.png'), auto;
+}
+.hide {
+  display: none;
+}
+.progress {
+  width: 100%;
+  height: .3125rem;
+  border: none;
+}
+progress::-moz-progress-bar { background: #1DB954; }
+progress::-webkit-progress-value { background: #1DB954; }
+progress { color: #1DB954; }
 
+.wrapper {
+  margin: 0 auto;
+  max-width: 62.5rem;
+}
+
+.search-section {
+  display: flex;
+  gap: .625rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.search-section h1 {
+  margin-top: 1rem;
+}
+.search-section .search-input {
+  padding: 3px;
+  width: 15.625rem;
+}
+.search-section .search-button {
+  padding: 6px 15px;
+  background-color: #1DB954;
+  border: none;
+  color: #fff;
+}
+
+.songs-section .search-result {
+  margin-top: 2rem;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 7rem);
+  gap: .625rem;
+  justify-content: center;
+}
+.item {
+  overflow: hidden;
+  display: grid;
+  background-color: #1DB954;
+  padding: .2rem;
+  text-align: center;
+  font-size: 12px;
+}
+.item img {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+}
+.item .item-overlay {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  display: grid;
+  transition: .6s;
+  opacity: 0;
+  top: -5%;
+}
+.item:hover .item-overlay {
+  opacity: 1;
+  top: 0%;
+}
+
+.songs-loading {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: #19141471;
+  display: none;
+  z-index: 2;
+  cursor: progress;
+}
+.songs-loading.show {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
